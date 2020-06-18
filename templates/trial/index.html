@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+	<script src="/static/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/static/plugins/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<title>{{ title }}</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="page-header">
+					<h1>
+						欢迎进入XX识字能力测试 <small>一个适合3-9岁儿童的词汇量测试</small>
+					</h1>
+				</div>
+
+				<div class="col-md-8 column">
+					<div class="jumbotron">
+						<h2>
+						指导语
+						</h2>
+						<p>
+							【{{ userName }}】小朋友，你好！快来教会喜羊羊你已经认识的字吧！<br>
+							接下来，你会看到屏幕上呈现一些词语，如果你认识的话，<br>
+							点击<button type="button" class="btn btn-warning">我认识</button>告诉喜羊羊。<br>
+						如果不认识的话也没关系，<br>
+							点击<button type="button" class="btn btn-primary">不认识</button>通知村长，让村长来教会喜羊羊吧！
+							<a class="btn" href="http://127.0.0.1:8000/run_trials/">
+								 <button type="button" class="btn btn-lg btn-success">开始测试>></button></a>
+						</p>
+
+					</div>
+				</div>
+				<div class="col-md-4 column" style="position: absolute; right: 0; bottom: 0">
+					<img alt="240x240" src="/static/images/PleasantSheep.gif" />
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

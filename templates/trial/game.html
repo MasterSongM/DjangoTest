@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="//cdn.bootcss.com/EaselJS/0.8.0/easeljs.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+	<script src="/static/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/static/plugins/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<link
+    rel="stylesheet"
+    href="/static/css/animate.min.css"/>
+	<title>{{ title }}</title>
+</head>
+{#<body onload="init();">#}
+<body>
+	<div class="row clearfix" >
+		<div class="col-md-2 column" style="position: absolute; left: 0; top: 0">
+			<a class="btn" href="http://127.0.0.1:8000/index/">
+				<button type="button" class="btn btn-warning" >回到首页</button></a>
+		</div>
+		<div class="col-md-8 column" id="center_div">
+{#			<div class="jumbotron">#}
+{#				<canvas class="animate__animated " id="demoCanvas" style="background-color: #1b6d85"></canvas>#}
+{#				<script src="/static/js/game.js"></script>	#}
+{#			</div>#}
+			<div id="trial_button" class="trial_block">
+				<div  style="margin: 20px" class="animate__animated animate__bounce">
+					<p id="trial_word" class="animate__animated animate__bounceInLeft">
+						{{ word|default:"测试词0"}}
+					</p>
+					<button id="yes" type="button" class="btn btn-warning">我认识</button>
+					<button id="no" type="button" class="btn btn-primary">不认识</button>
+				</div>
+			</div>
+{#				<canvas id="myCanvas" style="background-color: #5bc0de"></canvas>#}
+
+		</div>
+		<div class="col-md-2 column" style="position: absolute; right: 0; bottom: 0">
+			 <a id="modal-113904" href="#modal-container-113904" role="button" class="btn" data-toggle="modal">
+				<button type="button" class="btn btn-warning">中止测验</button>
+			 </a>
+
+			<div class="modal fade" id="modal-container-113904" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel">
+								你还没有完成测验，确认退出吗？
+							</h4>
+						</div>
+						<div class="modal-body">
+							退出后我们会保存你的测验结果，但可能不准确哦~
+						</div>
+						<div class="modal-footer">
+							<a class="btn" href="http://127.0.0.1:8000/index/">
+								<button type="button" class="btn btn-default">确认退出</button></a>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+<style type="text/css">
+	body {
+		background-image:url('/static/images/background_grassland.jpg');
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		background-position:center;
+		background-size:100% 100%;
+	}
+	#center_div{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.trial_block{
+		font-size: 36px;
+		border: 10px yellow solid;
+		background-color: #8c8c8c;
+		text-align: center;
+		font-family: Georgia;
+		{#font-size: xx-large;#}
+	}
+</style>
+
+<script>
+
+{#animate__animated animate__rubberBand#}
+$(document).ready(function(){
+    $("#yes").click(function(){
+		$('#trial_word').text('新词1' );
+		if($('#trial_word').hasClass("animate__rotateInDownLeft")){
+            $('#trial_word').removeClass("animate__rotateInDownLeft");
+			$('#trial_word').addClass("animate__rotateInDownRight");
+		}
+        else if($('#trial_word').hasClass("animate__rotateInDownRight")){
+            $('#trial_word').removeClass("animate__rotateInDownRight");
+			$('#trial_word').addClass("animate__rotateInDownLeft");
+		}
+        else{
+			$('#trial_word').addClass("animate__rotateInDownLeft");
+		}
+
+  })
+
+    $("#no").click(function(){
+    	$('#trial_word').text('新词-1');
+    	if($('#trial_word').hasClass("animate__rotateInDownLeft")){
+            $('#trial_word').removeClass("animate__rotateInDownLeft");
+			$('#trial_word').addClass("animate__rotateInDownRight");
+		}
+        else if($('#trial_word').hasClass("animate__rotateInDownRight")){
+            $('#trial_word').removeClass("animate__rotateInDownRight");
+			$('#trial_word').addClass("animate__rotateInDownLeft");
+		}
+        else{
+			$('#trial_word').addClass("animate__rotateInDownLeft");
+		}
+  })
+})
+
+</script>
+
+</html>
