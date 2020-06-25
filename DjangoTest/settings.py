@@ -87,15 +87,15 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
 
-        'NAME': 'literacy',    #你的数据库名称
+        'NAME': 'literacy',    # 你的数据库名称
 
-        'USER': 'root',   #你的数据库用户名
+        'USER': 'root',   # 你的数据库用户名
 
-        'PASSWORD': '123456MS', #你的数据库密码
+        'PASSWORD': '123456MS',  # 你的数据库密码
 
-        'HOST': '127.0.0.1', #你的数据库主机，留空默认为localhost
+        'HOST': '127.0.0.1',  # 你的数据库主机，留空默认为localhost
 
-        'PORT': '3306', #你的数据库端口
+        'PORT': '3306',  # 你的数据库端口
 
     }
 

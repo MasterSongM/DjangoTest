@@ -39,5 +39,6 @@ urlpatterns = [
     # 能力测试模块
     url('trial/', trial.index),
     url('run_trials/', trial.run_trial),
+    url('next/', trial.new_words),
 
 ]

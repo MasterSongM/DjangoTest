@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+	<script src="/static/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/static/plugins/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="/static/css/animate.min.css"/>
+	<title>{{ title|default:"Default Title" }}</title>
+</head>
+<body>
+
+<div class="outer">
+	<div class="upper">
+		<div class="" style="filter:alpha(Opacity=90);-moz-opacity:0.9;opacity: 0.9;">
+			<div id="balloon_box" class="">
+			<h2>点击你认识的单词，把小羊救出来吧！</h2><hr>
+{#				<div id="choose" class="animate__animated"> <!--animate__fadeOutLeft-->#}
+{#					<img src="/static/images/PleasantSheep.jpg"  width=150px height=150px>#}
+{#				</div>#}
+				<div id="choose" class="animate__animated">
+					<div id="wrap" class="animate__animated">
+						<div class="balloon" id="balloon_left" onclick="onceClick('left', flagLeft)">
+							<h2 class="word" id="word-left">{{ realword|default:"真词" }}</h2>
+						</div>
+						<div class="balloon" id="balloon_right" onclick="onceClick('right', flagRight)">
+							<h2 class="word" id="word-right">{{ fakeword|default:"假词" }}</h2>
+						</div>
+					</div>
+				</div>
+				<link rel="stylesheet" href="/static/css/balloon.css">
+{#				<button style="border:none" onclick="bounceInDown()"><h3>bounceInDown</h3></button>#}
+
+
+			</div>
+			<div id="saved" style="display: none;" class="animate__animated ">
+			<img src="/static/images/lazySheep.jpg"  width=100px height=100px>
+			</div>
+			<div id="saved1" style="display: none;" class="animate__animated ">
+			<img src="/static/images/lazySheep.jpg"  width=100px height=100px>
+			</div>
+
+			<div id="escaped" style="display: none;" class="animate__animated ">
+			<img src="/static/images/caught.jpg"  width=100px height=100px>
+			</div>
+			<div id="escaped1" style="display: none;" class="animate__animated ">
+			<img src="/static/images/caught.jpg"  width=100px height=100px>
+			</div>
+		</div>
+
+	</div>
+
+	<div class=" downer">
+		<div class="score_box">
+			<button onclick="f()">结束测试</button>
+			<div class="" style="float: left">
+			<h2>你救了【<P id="savedNumber" style="display: inline;">0</P>】只小羊</h2><hr>
+				<div  style="display: inline;">
+					<img src="/static/images/lazySheep.jpg"
+						 class="animate__animated" id="sheep" width=80px height=80px>
+				</div>
+
+			</div>
+			<div class="" style="float: right">
+			<h2>有【<P id="caughtNumber" style="display: inline;">0</P>】只羊被抓走了</h2><hr>
+				<div style="display: inline;">
+					<img src="/static/images/caught.jpg"
+						 class="animate__animated" id="wolf" width=80px height=80px>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class="" style="position: absolute; left: 0; top: 0">
+			<a class="btn" href="#modal-container-113904" role="button" class="btn" data-toggle="modal">
+				<button type="button" class="btn btn-warning" >回到首页</button></a>
+		</div>
+
+<div class="" style="position: absolute; right: 0; bottom: 0">
+			 <a id="modal-113904" href="#modal-container-113904" role="button" class="btn" data-toggle="modal">
+				<button type="button" class="btn btn-warning">中止测验</button>
+			 </a>
+
+			<div class="modal fade" id="modal-container-113904" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel">
+								确认退出吗？
+							</h4>
+						</div>
+						<div class="modal-body">
+							如果游戏已经结束，或者你要中止游戏，请点击确认退出~
+						</div>
+						<div class="modal-footer">
+							<a class="btn" href="http://127.0.0.1:8000/index/">
+								<button type="button" class="btn btn-default">确认退出</button></a>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+</div>
+
+</body>
+<style type="text/css">
+	html, body { height: 100%; padding: 0; margin: 0; }
+	body {
+		background-image:url('/static/images/background_grassland.jpg');
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		background-position:center;
+		background-size:100% 100%;
+	}
+	.outer { height: 100%; padding: 100px 0 0; box-sizing: border-box ; position: relative; text-align: center}
+	.upper { width: 100%; height: 70%;  position: absolute; top: 0 ; left: 0 ;
+		border: 20px solid #46b8da; border-bottom: 0}
+	.downer { width: 100%; height: 30%;  top:70%; bottom: 0;position: absolute;
+		border: 20px solid #46b8da; border-top: 0}
+	.score_box{
+		filter:alpha(Opacity=70);-moz-opacity:0.7;opacity: 0.7;
+		position: absolute;
+		width: 100%;
+		bottom: 0
+	}
+
+	#balloon_box{
+		justify-content: center;
+		align-items: center;
+		text-align:center
+	}
+	#saved, #saved1, #escaped, #escaped1{
+		text-align:center;
+		position:fixed;
+		bottom:10px;
+		left:45%;
+		overflow: hidden;
+	}
+
+	.score_box h2{
+		color: #2b669a;
+		font-width: bold;
+	}
+
+	.animate__bounce{
+		animation-duration: 1.5s;
+	}
+	.animate__fadeOutUp{
+		animation-duration: 2s;
+	}
+</style>
+<script>
+	$.ajaxSetup({
+		data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+	});
+</script>
+<script src="/static/js/game.js"></script>
+</html>
