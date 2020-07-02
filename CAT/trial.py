@@ -5,7 +5,7 @@ from django.shortcuts import render
 import json
 
 
-def index(request):
+def initial(request):
     # 验证登陆状态，未登陆用户的跳转至登陆界面；已登陆的呈现指导语
     context = {'title': '识字能力测评页面', 'userName': '亲爱的用户'}
     return render(request, 'trial/index.html', context)

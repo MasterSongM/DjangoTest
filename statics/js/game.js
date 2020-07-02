@@ -16,56 +16,6 @@ function f() {
 		flagContinue = false;
 	}
 
-// 发送Ajax异步请求，取得返回结果后更新单词
-function getNewWords(clicked,flag) {
-    console.log("flagContinue:",flagContinue)
-    if(!flagContinue){
-        console.log("测试完成！");
-        $("#word-left").text("游戏");
-        $("#word-right").text("结束");
-        return;
-    }
-
-    $.ajax({
-        //请求方式
-        type : "POST",
-        //请求的媒体类型
-        dataType: "json",
-        //请求地址
-        url : "/next/",
-        //数据，json字符串
-        data : {'clicked':clicked, 'flag':flag},
-        //请求成功
-        success : function(result) {
-            if(result.realWord == ""){
-                $("#word-left").text("游戏");
-                $("#word-right").text("结束");
-                flagContinue = false;
-                return;
-            }
-            let randomNum = new Date().getSeconds();
-            console.log("根据当前时间的秒数获得随机数：",randomNum);
-            if (randomNum % 2 == 0){
-                flagLeft = true;
-                $("#word-left").text(result.realWord);
-                flagRight = false;
-                $("#word-right").text(result.fakeWord);
-            }
-            else{
-                flagLeft = false;
-                $("#word-left").text(result.fakeWord);
-                flagRight = true;
-                $("#word-right").text(result.realWord);
-            }
-        },
-        //请求失败，包含具体的错误信息
-        error : function(e){
-            alert("连接失败，请检查网络或者联系管理员！")
-            console.log(e.status);
-            console.log(e.responseText);
-        }
-    })
-}
 function flyAway() {
     //alert("No Click! Balloons Will Fly Away!");
     console.log("No Click! Balloons Will Fly Away!")

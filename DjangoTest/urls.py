@@ -16,10 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-
-from DjangoTest import testdb
-from testApp import views                      # 首先需要导入对应APP的views
-from testApp import trial
+from CAT import views, player  # 首先需要导入对应APP的views
+from CAT import trial
 
 urlpatterns = [
     # 网站门户相关
@@ -32,13 +30,14 @@ urlpatterns = [
 
     url('hello', views.hello),
 
-    path('testdb/', testdb.testdb),
-
     # 登陆模块
 
     # 能力测试模块
-    url('trial/', trial.index),
-    url('run_trials/', trial.run_trial),
-    url('next/', trial.new_words),
+    # url('trial/', trial.initial),
+    # url('run_trials/', trial.run_trial),
+    # url('next/', trial.new_words),
+    url('trial/', player.initial),
+    url('run_trials/', player.run_trial),
+    url('next/', player.verify),
 
 ]
