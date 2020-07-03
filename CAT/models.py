@@ -57,6 +57,7 @@ class Trial(models.Model):
 
 
 class Pattern(models.Model):
+    name = models.CharField(default='unnamedPattern', max_length=50)
     max_num = models.IntegerField(default=20, verbose_name="the upper limit number of trials")
     critical_r = models.FloatField(default=0.8, verbose_name="critical value to stop or continue")
-    is_on = models.BooleanField(default=False, verbose_name="whether the pattern is on")
+    is_on = models.BooleanField(default=True, verbose_name="whether the pattern is on")

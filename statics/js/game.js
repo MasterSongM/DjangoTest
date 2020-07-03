@@ -6,6 +6,7 @@ let flagRight = false;	// 右侧气球的单词是否为真词，每个试次更
 let flagContinue = true;	// 实验是否在继续
 let noClick; // 没有点击时，自动飞走的触发器
 let fly; // 用于自动飞走时的动画的出发器
+let trial;
 
 $(document).ready(function(){
     noClick = setTimeout(flyAway, 5000);

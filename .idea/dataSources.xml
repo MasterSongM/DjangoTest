@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:D:\Codes\DjangoTest\pycharm</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="pycharm [2]" uuid="29f006d4-abf1-42cc-8bdd-d865342ab7af">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\Codes\gitCode\DjangoTest\pycharm</jdbc-url>
+    </data-source>
   </component>
 </project>

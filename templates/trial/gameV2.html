@@ -158,6 +158,10 @@
 	}
 </style>
 <script>
+	$(document).ready(function(){
+	  	trial = {{ trial }}
+		console.log("trial:",trial)
+	});
 	$.ajaxSetup({
 		data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
 	});
@@ -180,10 +184,13 @@
 			//请求地址
 			url : "/next/",
 			//数据，json字符串
-			data : {'trial':'{{ trial }}', 'clicked':clicked, 'flag':flag},
+			data : {'trial':trial, 'clicked':clicked, 'flag':flag},
 			//请求成功
 			success : function(result) {
-				if(result.trial < 0 | result.realWord == ""){
+			    trial = result.trial;
+			    console.log("trial:",trial)
+				if(trial < 0 | result.realWord == ""){
+
 					$("#word-left").text("游戏");
 					$("#word-right").text("结束");
 					flagContinue = false;

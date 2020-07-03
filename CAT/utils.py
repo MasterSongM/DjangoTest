@@ -46,11 +46,11 @@ def estimate_curr_theta(item: 'Item', answer: 'bool'):
 
 # 判断统计量是否满足停止测试的要求
 def continue_or_not(info_sum: 'float', R: 'float'):
-    SE = info_sum ** (-1 / 2)
+    SE = abs(info_sum) ** (-1 / 2)
     r = 1 - SE ** 2
     if r > R:
+        print("信息量尚未达到阈值，继续测试")
         return True
     else:
+        print("信息量达到阈值，结束测试")
         return False
-
-
