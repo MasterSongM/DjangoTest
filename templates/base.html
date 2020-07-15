@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all"/> <!-- Style-CSS -->
+	<script src="/static/js/jquery-3.4.1.min.js"></script>
+	<title>{{ title}}</title>
+</head>
+<body>
+
+<div class="container"  style="background-color: #2B2B2B">
+	<div class="top-nav">
+		<nav class="navbar navbar-default" >
+			<h1><a class="navbar-brand" href="index.html">Literature<span>Best Education</span></a></h1>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a class="" href="/index/"><h3>首页</h3></a></li>
+					<li><a href="/index/#about" class="scroll"><h3>了解详情</h3></a></li>
+					<li><a href="/index/#mail" class="scroll"><h3>联系我们</h3></a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+		</nav>
+	</div>
+</div>
+<div class="outer">
+{% block main_body %}
+{% endblock main_body %}
+</div>
+<div class="container"  style="background-color: #2B2B2B">
+	<div class="w3ls_footer_grid">
+		<div class="col-md-6 col-sm-8 col-xs-8 w3ls_footer_grid_left">
+				<div class="w3ls_footer_grid_left1">
+					<h3>关注我们</h3>
+					<div class="w3ls_footer_grid_left1_pos">
+						<ul>
+							<li><a href="#" class="facebook"><i class="fa fa-facebook"
+																aria-hidden="true"></i>微信公众号</a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true">新浪微博</i></a>
+							</li>
+							<li><a href="#" class="google"><i class="fa fa-google-plus"
+															  aria-hidden="true"></i>小程序</a></li>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<div class="col-md-6 w3ls_footer_grid1_right">
+			<div style="margin-top: 30px">
+				<p>Copyright &copy; 2020.Company name All rights reserved.
+				</p>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+</div>
+<style>
+	.outer .clearfix{
+		border: dashed 2px #996699;
+		padding: 20px;
+	}
+</style>
+</body>
+</html>

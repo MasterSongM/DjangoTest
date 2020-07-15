@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from CAT import views, player  # 首先需要导入对应APP的views
+from CAT import views, player, accounts  # 首先需要导入对应APP的views
 from CAT import trial
 
 urlpatterns = [
@@ -27,6 +27,10 @@ urlpatterns = [
     # 默认页面index.html
     url(r'^$', views.index),
     url('index', views.index),
+    url('accounts/login/', accounts.cat_login),
+    url('accounts/logout/', accounts.cat_logout),
+    url('accounts/register/', accounts.cat_register),
+
 
     url('hello', views.hello),
 
@@ -36,8 +40,7 @@ urlpatterns = [
     # url('trial/', trial.initial),
     # url('run_trials/', trial.run_trial),
     # url('next/', trial.new_words),
-    url('trial/', player.initial),
-    url('run_trials/', player.run_trial),
-    url('next/', player.verify),
+    url('examination/', player.instruction),
+    url('trials/', player.get_trial),
 
 ]

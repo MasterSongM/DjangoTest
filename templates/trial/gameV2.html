@@ -21,10 +21,10 @@
 				<div id="choose" class="animate__animated">
 					<div id="wrap" class="animate__animated">
 						<div class="balloon" id="balloon_left" onclick="onceClick('left', flagLeft)">
-							<h2 class="word" id="word-left">{{ item|default:"真词" }}</h2>
+							<h2 class="word" id="word-left">{{ realWord|default:"真词" }}</h2>
 						</div>
 						<div class="balloon" id="balloon_right" onclick="onceClick('right', flagRight)">
-							<h2 class="word" id="word-right">{{ disruptor|default:"假词" }}</h2>
+							<h2 class="word" id="word-right">{{ fakeWord|default:"假词" }}</h2>
 						</div>
 					</div>
 				</div>
@@ -182,9 +182,9 @@
 			//请求的媒体类型
 			dataType: "json",
 			//请求地址
-			url : "/next/",
+			url : "/trials/",
 			//数据，json字符串
-			data : {'trial':trial, 'clicked':clicked, 'flag':flag},
+			data : {'trial':trial, 'clicked':clicked, 'flag':flag, 'exam_type':{{ exam_type }} },
 			//请求成功
 			success : function(result) {
 			    trial = result.trial;

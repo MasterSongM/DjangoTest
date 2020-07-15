@@ -1,0 +1,58 @@
+{% extends "base.html"%}
+{% block main_body %}
+	<div class="container">
+		<div class="row clearfix">
+			<h3 class="tittle-w3l">欢迎进入XX识字能力测试</h3>
+			<div class="col-md-6 agileinfo_banner_bottom_right">
+				<div class="agileinfo_banner_bottom_right1">
+					<h3>指导语</h3>
+					<div class="agileinfo_banner_bottom_right1_grid">
+						<div class="" style="padding: 24px; font-size: 18px;">
+							<p>
+								【{{ userName }}】小朋友，你好！快来用你学会的知识拯救懒羊羊吧！
+								接下来，你会在屏幕上看到两个气球，点击你认识的字，把懒羊羊放出来。
+								<b>注意</b>，如果点到了错误的单词，灰太狼就会把小羊抓走哦！<br>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 " style="text-align: center">
+				<div class="agileinfo_banner_bottom_right1">
+					<h3 class="">请根据需要，选择测试内容:</h3>
+					<ul class="choose">
+					<li><div class="choose_box">
+						<p>字测试：假装有一段简洁的说明</p>
+						<a class="btn" href="http://127.0.0.1:8000/trials?type=1">
+						<button type="button" class="btn btn-lg btn-info">开始  字测试>></button>
+					</a>
+					</div></li>
+					<li><div class="choose_box">
+						<p>词测试：这也是一段简洁的说明</p>
+						<a class="btn" href="http://127.0.0.1:8000/trials?type=2">
+						<button type="button" class="btn btn-lg btn-success">开始  词测试>></button>
+					</a>
+					</div></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<style>
+	.choose li{
+		display: inline;
+	}
+	.choose button{
+		font-size: 24px;
+	}
+	.choose_box{
+		border: 1px dashed #000;
+		margin: 15px;
+		padding: 10px;
+	}
+	.choose_box p{
+		font-size: 18px;
+		color: #3c763d;
+	}
+</style>
+{% endblock main_body %}

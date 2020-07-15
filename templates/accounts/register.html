@@ -1,0 +1,77 @@
+{% extends "base.html"%}
+{% block main_body %}
+{#<div style="margin: 100px"></div>#}
+<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-2 column">
+			</div>
+			<div class="col-md-6 agileinfo_banner_bottom_right">
+				<div class="agileinfo_banner_bottom_right1">
+					<h3>用户注册</h3>
+					<div class="agileinfo_banner_bottom_right1_grid" style=" ">
+						<form action="/accounts/register/" method="post" autocomplete="off">
+							{% csrf_token %}
+							{{ form_obj }}
+
+							<input type="submit" value="注册">
+						</form>
+						<div style="text-align: center; margin: 10px">已有账号？<a href="/accounts/login"><button class="btn-success">去登陆</button></a></div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-md-4 column">
+			</div>
+		</div>
+	</div>
+<style>
+	select,input{
+		width: 100%;
+		padding: .9em 1.5em;
+		color: #999;
+		font-size: 0.9em;
+		border: 1px solid #ccc;
+		outline: none;
+		margin-bottom: 1em;
+		border-radius: 25px;
+	}
+</style>
+
+<script>
+    function check_password() {
+        console.log("password check!")
+        if ($('#p1').val() == $('#p2').val()) {
+            console.log($('#p1').val())
+            return true;
+        } else {
+            alert('两次密码不一致')
+        }
+    }
+</script>
+
+{% endblock main_body %}
+
+{#<div class="my_input">#}
+{#		<label for="birth">出生日期：</label><input type="date" name="birth_time" placeholder="选择出生日期" required="" id="birth"><br>#}
+{#	</div>#}
+{##}
+{#	<div class="my_input">#}
+{#		<label>性别：</label><select name="gender">#}
+{#			<option value="未知" order="1">未知</option>#}
+{#			<option value="男" order="2">男</option>#}
+{#			<option value="女" order="3">女</option>#}
+{#		</select><br>#}
+{#	</div>#}
+{#	<div class="my_input">#}
+{#		<label>惯用手：</label><select name="gender">#}
+{#			<option value="right" order="1">右利手</option>#}
+{#			<option value="left" order="2">左利手</option>#}
+{#		</select><br>#}
+{#	</div>#}
+{##}
+{#	<label>姓名：</label><input type="text" name="name" placeholder="姓名" required=""><br>#}
+{#	<label>手机：</label><input type="text" name="phone" placeholder="电话号码" required=""><br>#}
+{#	<label>邮箱：</label><input type="email" name="email" placeholder="邮箱" required=""><br>#}
+{#	<input type="text" style="display: none;">#}
+{#	<label>密码：</label><input type="password" name="password-1" placeholder="" required="" autocomplete="new-password" id="p1"><br>#}
+{#	<label>确认密码：</label><input type="password" name="password-2" placeholder="" required="required" id="p2" onblur="check_password()"><br>#}

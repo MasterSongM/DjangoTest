@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# 表明使用了自定义的User模型
+AUTH_USER_MODEL = 'CAT.User'
+
+LOGIN_URL = 'accounts/login/'
+
 
 # Application definition
 
@@ -124,9 +129,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
 
 # TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True

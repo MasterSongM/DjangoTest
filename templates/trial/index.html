@@ -23,11 +23,11 @@
 				【{{ userName }}】小朋友，你好！快来用你学会的知识拯救懒羊羊吧！<br>
 				接下来，你会在屏幕上看到两个气球，点击你认识的字，把懒羊羊放出来。<br>
 				注意，如果点到了错误的单词，灰太狼就会把小羊抓走哦！<br>
-{#				<a class="btn" href="http://127.0.0.1:8000/run_trials/?exam={{ exam_id }}">#}
-{#					<button type="button" class="btn btn-lg btn-success">开始游戏>></button>#}
-{#				</a>#}
-				<button type="button" class="btn btn-lg btn-success"
-						onclick="standardPost('/run_trials/',{'exam':{{exam_id}},'userName':'NoUser'})">开始游戏>></button>
+				<a class="btn" href="http://127.0.0.1:8000/trials">
+					<button type="button" class="btn btn-lg btn-success">开始游戏>></button>
+				</a>
+{#				<button type="button" class="btn btn-lg btn-success"#}
+{#						onclick="standardPost('/run_trials/',{'exam':{{exam_id}},'userName':'NoUser'})">开始游戏>></button>#}
 			</p>
 			</div>
 			<div id="balloon_box" class="">

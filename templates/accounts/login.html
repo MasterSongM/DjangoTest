@@ -1,0 +1,50 @@
+{% extends "base.html"%}
+{% block main_body %}
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-2 column">
+			</div>
+			<div class="col-md-6 agileinfo_banner_bottom_right">
+				<div class="agileinfo_banner_bottom_right1">
+					<h4>{{ text }}</h4>
+					<h3>用户登陆</h3>
+					<div class="agileinfo_banner_bottom_right1_grid" style=" ">
+						<form role="form" action="{{ request.get_full_path }}" method="post">
+							{% csrf_token %}
+							<div class="form-group">
+								<label for="phone1">电话号码</label>
+								<input required="required" type="text" name="username"
+									   class="form-control" id="phone1" />
+							</div>
+							<div class="form-group">
+								 <label for="password1">密码
+								 </label><input type="password" class="form-control" name="password" id="password1" />
+							</div>
+							<span style="color:red;">{{ err_msg }}</span>
+							<div class="checkbox">
+								 <label><input type="checkbox" />下次自动登陆</label>
+							</div>
+							<input type="submit" class="btn btn-default btn-success" value="登陆">
+						</form>
+						<div style="text-align: center; margin: 10px">没有账号？<a href="/accounts/register"><button class="btn-info">先去注册</button></a></div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-md-4 column">
+			</div>
+		</div>
+	</div>
+<style>
+	.form-group input{
+		width: 100%;
+		padding: .9em 1.5em;
+		color: #999;
+		font-size: 0.9em;
+		border: 1px solid #ccc;
+		outline: none;
+		margin-bottom: 1em;
+		border-radius: 25px;
+	}
+</style>
+{% endblock main_body %}
