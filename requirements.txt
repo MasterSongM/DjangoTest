@@ -1,4 +1,4 @@
 sympy==1.6
-Django==2.2.11
+Django==2.2.13
 PyMySQL==0.9.3
 numpy==1.16.2
