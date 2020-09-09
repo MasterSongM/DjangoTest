@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block main_body %}
+	<div class="container">
+		<div class="row clearfix">
+			<h3 class="tittle-w3l">欢迎进入XX识字能力测试</h3>
+			<div class="col-md-12 agileinfo_banner_bottom_right" style="text-align: center">
+				<div class="agileinfo_banner_bottom_right1">
+					<h3>请根据需要，选择测试内容:</h3>
+					<div class="agileinfo_banner_bottom_right1_grid">
+						<div class="" style="padding: 24px; font-size: 18px;">
+							<p style="font-size: 24px">
+								【{{ userName|default:"用户" }}】您好，本页面包含多个测试入口，请根据相应入口上方的文字说明，确认您所要进行的测试!<br>
+							</p>
+						</div>
+						<ul class="choose">
+							<li>
+								<div class="choose_box">
+									<p>假装有一段简洁的说明</p>
+									<a class="btn" href="#">
+										<button type="button" class="btn btn-lg btn-primary">快速命名任务>></button>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="choose_box">
+									<p>这也是一段简洁的说明</p>
+									<a class="btn" href="#">
+										<button type="button" class="btn btn-lg btn-success">音素测试任务>></button>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="choose_box">
+									<p>一段简洁的说明</p>
+									<a class="btn" href="#">
+										<button type="button" class="btn btn-lg btn-info">语素测试任务>></button>
+									</a>
+								</div>
+							</li>
+							<li>
+								<div class="choose_box">
+									<p>一段简洁的说明</p>
+									<a class="btn" href="/exams?type=4">
+										<button type="button" class="btn btn-lg btn-warning">词汇测试任务>></button>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="agileinfo_banner_bottom_right1"></div>
+				</div>
+			</div>
+			<div class="col-md-12 "></div>
+		</div>
+	</div>
+	<style>
+		.choose li {
+			display: inline;
+		}
+
+		.choose button {
+			font-size: 24px;
+		}
+
+		.choose_box {
+			border: 1px dashed #000;
+			margin: 15px;
+			padding: 10px;
+		}
+
+		.choose_box p {
+			font-size: 18px;
+			color: #3c763d;
+		}
+	</style>
+{% endblock main_body %}
